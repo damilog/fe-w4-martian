@@ -1,6 +1,193 @@
-body
-  padding: 10px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+$deg: 22.5deg;
 
-a
-  color: #00B7FF
+* 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+body 
+  padding: 10px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+
+a 
+  color: #00b7ff;
+
+
+.circle 
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-color: hsla(234, 98%, 67%, 0.89);
+  border-radius: 50%;
+
+.line-container 
+  outline: black solid;
+  width: 500px;
+  height: 500px;
+
+.line 
+  position: absolute;
+  top: 50%;
+  background-color: #333333;
+  height: 1px;
+  width: 500px;
+  transform: translateY(100px);
+
+
+#l-01 
+  transform: rotate($deg);
+  
+  span
+    top: 25px;
+    position: absolute;
+    font-size: 30px;
+    transform: rotate(-$deg);
+
+  #line__text-l
+    left: 20px;
+ 
+
+  #line__text-r 
+    right: 20px;
+ 
+
+
+#l-02 
+  transform: rotate($deg * 2);
+
+  span
+    top: 25px;
+    position: absolute;
+    font-size: 30px;
+    transform: rotate(-$deg*2);
+
+  #line__text-l
+    left: 20px;
+ 
+
+  #line__text-r 
+    right: 20px;
+
+
+#l-03  
+  transform: rotate($deg * 3);
+
+  span
+    top: 25px;
+    position: absolute;
+    font-size: 30px;
+    transform: rotate(-$deg*3);
+
+  #line__text-l
+    left: 20px;
+ 
+
+  #line__text-r 
+    right: 20px;
+
+#l-04 
+  transform: rotate($deg * 4);
+  
+  span
+    top: 25px;
+    position: absolute;
+    font-size: 30px;
+    transform: rotate(-$deg*4);
+
+  #line__text-l
+    left: 20px;
+ 
+
+  #line__text-r 
+    right: 20px;
+
+#l-05 
+  transform: rotate($deg * 5);
+
+  span
+    top: 25px;
+    position: absolute;
+    font-size: 30px;
+    transform: rotate(-$deg*5);
+
+  #line__text-l
+    left: 20px;
+ 
+
+  #line__text-r 
+    right: 20px;
+
+
+#l-06 
+  transform: rotate($deg * 6);
+
+  span
+    top: 25px;
+    position: absolute;
+    font-size: 30px;
+    transform: rotate(-$deg*6);
+
+  #line__text-l
+    left: 20px;
+ 
+
+  #line__text-r 
+    right: 20px;
+
+#l-07 
+  transform: rotate($deg * 7);
+
+  span
+    top: 25px;
+    position: absolute;
+    font-size: 30px;
+    transform: rotate(-$deg*7);
+
+  #line__text-l
+    left: 20px;
+ 
+
+  #line__text-r 
+    right: 20px;
+
+#l-08 
+  transform: rotate($deg * 8);
+
+  span
+    top: 25px;
+    position: absolute;
+    font-size: 30px;
+    transform: rotate(-$deg * 8);
+
+  #line__text-l
+    left: 20px;
+    
+ 
+
+#line__text-r-out
+  position: absolute;
+  top: 55%;
+  right: 20px;
+  font-size: 30px;
+    
+
+
+.arrow 
+  font-size: 60px
+  top: 40%;
+  left: 40%;
+  padding: 20px;
+  position: absolute;
+  width: 100px;
+  height: 100px
+  background-color: white;
+  border: gray solid 1px;
+  border-radius: 50%;
+  //transform: rotate(10deg);
+
+  i
+    position: absolute;
+    left: 34px
+/*# sourceMappingURL=style.css.map */
