@@ -25,46 +25,44 @@ const hexLocations = {
 
 const $inputReceive = _.$(".input-receive");
 
-const sendSignal = () => {
+const sendSignal = word => {
   //words를 5초마다 receive에 보낸다.
-  const words = ["hello", "crong", "daisy"];
-  setTimeout(receiveCharSignal(words[2]), 5000);
+  const currentWord = [...word];
+  const hexadecimal = currentWord
+    .map(x => x.charCodeAt(0).toString(16)) //10진수 -> 16진수
+    .map(x => [...x]);
+
+  let idx = 0;
+
+  const sender = setInterval(() => {
+    if (idx === hexadecimal.length) {
+      clearInterval(sender);
+      console.log("전송 완료");
+    } else {
+      receiveCharSignal(hexadecimal[idx]); //["6","4"]형태로 전달
+      idx++;
+    }
+  }, 3000);
 };
 
 const receiveCharSignal = data => {
-  //수신기
-  receivedSignalStorage.push(data); //daisy
-  convertCharToHex(data);
-}; //수신기는 5초간격으로 문자를 수신받는다. 전달받은 문자를 16진수로 변환한다.
-
-const convertCharToHex = data => {
-  //단어를 알파벳으로 나눠서 그 알파벳으로 만든 16진수를 hexList에 넣음
-  const char = data; //daisy
-  const hexList = []; //[["64", "61", "69", "73", "79"]
-
-  for (const idx in char) {
-    hexList.push(char.charCodeAt(idx).toString(16));
-  }
-  pointHexString(hexList); // 화살표로 16진수 문자들을 가리키는 함수
+  console.log(data);
 };
 
 const pointHexString = hex => {
   // 화살표로 16진수 문자들을 가리키는 함수
-  const hexList = [...hex];
-
   const promise = new Promise((resolve, reject) => {
-    setTimeout(() => resolve(hex[0]), 2000); //2초뒤에 -> 화살표를 회전시키는 함수 호출
+    setTimeout(() => resolve(hex), 2000); //2초뒤에 -> 화살표를 회전시키는 함수 호출
   });
   promise.then(hex => rotateArrow(hex));
 };
 
 const rotateArrow = hex => {
   //화살표를 회전시키는 함수 hex값에 해당하는 deg만큼 화살표를 회전시킴
-  console.log("promise resolved");
-  console.log(hex);
-  $arrow.style.transform = `rotate(${hexLocations[hex[0]]}deg)`;
-  showReceivedHexStr(hex[0]); //input에 현재 hex값을 보여줌
-  colorReceivedHexStr(hex[0]); //현재 hex값에 해당하는 elem을 깜빡거리게 함
+
+  $arrow.style.transform = `rotate(${hexLocations[hex]}deg)`;
+  showReceivedHexStr(hex); //input에 현재 hex값을 보여줌
+  colorReceivedHexStr(hex); //현재 hex값에 해당하는 elem을 깜빡거리게 함
 };
 
 const convertHexToChar = () => {};
