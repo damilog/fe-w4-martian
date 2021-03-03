@@ -6,8 +6,14 @@
 body {
   padding: 30px; }
 
-a {
-  color: #00b7ff; }
+.blink {
+  -webkit-animation: blink 0.4s linear infinite; }
+
+@keyframes blink {
+  0% {
+    color: #fff; }
+  100% {
+    color: #ef5350; } }
 
 main {
   position: relative;
@@ -27,7 +33,6 @@ main {
   font-family: 'DotGothic16', sans-serif; }
 
 .line-container {
-  outline: black solid;
   width: 500px;
   height: 500px; }
 
@@ -44,10 +49,10 @@ main {
   position: absolute;
   font-size: 30px; }
 
-#line__text-l {
+.line__text-l {
   left: 20px; }
 
-#line__text-r {
+.line__text-r {
   right: 20px; }
 
 #l-01 {
@@ -94,7 +99,7 @@ main {
   #l-08 span {
     transform: rotate(-180deg); }
 
-#line__text-r-out {
+.line__text-r-out {
   position: absolute;
   top: 55%;
   right: 20px;
@@ -109,8 +114,7 @@ main {
   height: 100px;
   background-color: #00838f;
   border: #005662 solid 3px;
-  border-radius: 50%;
-  transform: rotate(-119deg); }
+  border-radius: 50%; }
   .arrow i {
     position: absolute;
     left: 34%;

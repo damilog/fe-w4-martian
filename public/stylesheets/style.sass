@@ -12,9 +12,16 @@ $light-yellow: #eeff41;
 body 
   padding: 30px;
 
-a 
-  color: #00b7ff;
+.blink
+  -webkit-animation: blink 0.4s linear infinite;
 
+@keyframes blink
+  0% 
+    color: $white;
+    
+  100%
+    color: #ef5350;
+    
 main
   position: relative;
   width: 800px;
@@ -33,7 +40,6 @@ main
   font-family: 'DotGothic16', sans-serif;
 
 .line-container 
-  outline: black solid;
   width: 500px;
   height: 500px;
 
@@ -50,11 +56,11 @@ main
   position: absolute;
   font-size: 30px;
 
-#line__text-l
+.line__text-l
   left: 20px;
  
 
-#line__text-r 
+.line__text-r 
   right: 20px;
 
 
@@ -120,7 +126,7 @@ main
     transform: rotate(-$deg * 8);
 
 
-#line__text-r-out
+.line__text-r-out
   position: absolute;
   top: 55%;
   right: 20px;
@@ -137,7 +143,7 @@ main
   background-color: #00838f;
   border: #005662 solid 3px;
   border-radius: 50%;
-  transform: rotate(-119deg);
+  // transform: rotate(240deg);
 
   i
     position: absolute;

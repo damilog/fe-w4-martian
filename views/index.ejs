@@ -17,38 +17,39 @@
     <main>
       <section class="circle">
         <div class="line-container">
+          <!-- 여기부터 템플릿 처리 하기 -->
           <div class="line" id="l-01">
-            <span class="line-span" id="line__text-l">C</span>
-            <span class="line-span" id="line__text-r">5</span>
+            <span class="line-span line__text-l" id="text-C">C</span>
+            <span class="line-span line__text-r" id="text-5">5</span>
           </div>
           <div class="line" id="l-02">
-            <span class="line-span" id="line__text-l">D</span>
-            <span class="line-span" id="line__text-r">6</span>
+            <span class="line-span line__text-l" id="text-D">D</span>
+            <span class="line-span line__text-r" id="text-6">6</span>
           </div>
           <div class="line" id="l-03">
-            <span class="line-span" id="line__text-l">E</span>
-            <span class="line-span" id="line__text-r">7</span>
+            <span class="line-span line__text-l" id="text-E">E</span>
+            <span class="line-span line__text-r" id="text-7">7</span>
           </div>
           <div class="line" id="l-04">
-            <span class="line-span" id="line__text-l">F</span>
-            <span class="line-span" id="line__text-r">8</span>
+            <span class="line-span line__text-l" id="text-F">F</span>
+            <span class="line-span line__text-r" id="text-8">8</span>
           </div>
           <div class="line" id="l-05">
-            <span class="line-span" id="line__text-l">0</span>
-            <span class="line-span" id="line__text-r">9</span>
+            <span class="line-span line__text-l" id="text-0">0</span>
+            <span class="line-span line__text-r" id="text-9">9</span>
           </div>
           <div class="line" id="l-06">
-            <span class="line-span" id="line__text-l">1</span>
-            <span class="line-span" id="line__text-r">A</span>
+            <span class="line-span line__text-l" id="text-1">1</span>
+            <span class="line-span line__text-r" id="text-A">A</span>
           </div>
           <div class="line" id="l-07">
-            <span class="line-span" id="line__text-l">2</span>
-            <span class="line-span" id="line__text-r">B</span>
+            <span class="line-span line__text-l" id="text-2">2</span>
+            <span class="line-span line__text-r" id="text-B">B</span>
           </div>
           <div class="line" id="l-08">
-            <span class="line-span" id="line__text-l">3</span>
+            <span class="line-span line__text-l" id="text-3">3</span>
           </div>
-          <span class="line-span" id="line__text-r-out">4</span>
+          <span class="line-span line__text-r-out" id="text-4">4</span>
         </div>
         <div class="arrow"><i class="fas fa-long-arrow-alt-up"></i></div>
       </section>
@@ -56,12 +57,12 @@
       <section class="input-container">
         <div class="input-box">
           <span>송수신정보</span>
-          <input type="text" />
+          <input class="input-receive" type="text" disabled />
           <button>해석하기</button>
         </div>
         <div class="input-box">
           <span>발신정보입력</span>
-          <input type="text" placeholder="> HELLO EARTH!" />
+          <input class="input-send" type="text" placeholder="> HELLO EARTH!" />
           <button>지구로보내기</button>
         </div>
       </section>
