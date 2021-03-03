@@ -1,26 +1,36 @@
 $deg: 22.5deg;
+$dark-gray: #212121;
+$borad-font: #f5f5f5;
+$white: #fff;
+$light-yellow: #eeff41;
 
 * 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
-
 body 
-  padding: 10px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
+  padding: 30px;
 
 a 
   color: #00b7ff;
 
+main
+  position: relative;
+  width: 800px;
+  height: 800px;
+  padding: 50px;
+  background-image: url("https://foreignpolicy.com/wp-content/uploads/2019/07/1_Earthrise-space-climate-NASA-Autry-climate-GettyImages-90763854_SW_V1.jpg")
+  background-repeat: no-repeat;
+  background-size: 1200px;
 
 .circle 
   position: relative;
   width: 500px;
   height: 500px;
-  background-color: hsla(234, 98%, 67%, 0.89);
+  color : $white;
   border-radius: 50%;
+  font-family: 'DotGothic16', sans-serif;
 
 .line-container 
   outline: black solid;
@@ -34,66 +44,45 @@ a
   height: 1px;
   width: 500px;
   transform: translateY(100px);
+  
+.line-span
+  top: 25px;
+  position: absolute;
+  font-size: 30px;
+
+#line__text-l
+  left: 20px;
+ 
+
+#line__text-r 
+  right: 20px;
 
 
 #l-01 
   transform: rotate($deg);
   
   span
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-$deg);
-
-  #line__text-l
-    left: 20px;
- 
-
-  #line__text-r 
-    right: 20px;
- 
 
 
 #l-02 
   transform: rotate($deg * 2);
 
   span
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-$deg*2);
-
-  #line__text-l
-    left: 20px;
- 
-
-  #line__text-r 
-    right: 20px;
 
 
 #l-03  
   transform: rotate($deg * 3);
 
   span
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-$deg*3);
 
-  #line__text-l
-    left: 20px;
- 
-
-  #line__text-r 
-    right: 20px;
 
 #l-04 
   transform: rotate($deg * 4);
   
   span
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-$deg*4);
 
   #line__text-l
@@ -107,64 +96,29 @@ a
   transform: rotate($deg * 5);
 
   span
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-$deg*5);
-
-  #line__text-l
-    left: 20px;
- 
-
-  #line__text-r 
-    right: 20px;
 
 
 #l-06 
   transform: rotate($deg * 6);
 
   span
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-$deg*6);
 
-  #line__text-l
-    left: 20px;
- 
-
-  #line__text-r 
-    right: 20px;
 
 #l-07 
   transform: rotate($deg * 7);
 
   span
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-$deg*7);
 
-  #line__text-l
-    left: 20px;
- 
-
-  #line__text-r 
-    right: 20px;
 
 #l-08 
   transform: rotate($deg * 8);
 
   span
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-$deg * 8);
 
-  #line__text-l
-    left: 20px;
-    
- 
 
 #line__text-r-out
   position: absolute;
@@ -173,21 +127,70 @@ a
   font-size: 30px;
     
 
-
 .arrow 
   font-size: 60px
   top: 40%;
   left: 40%;
-  padding: 20px;
   position: absolute;
   width: 100px;
   height: 100px
-  background-color: white;
-  border: gray solid 1px;
+  background-color: #00838f;
+  border: #005662 solid 3px;
   border-radius: 50%;
-  //transform: rotate(10deg);
+  transform: rotate(-119deg);
 
   i
     position: absolute;
-    left: 34px
-/*# sourceMappingURL=style.css.map */
+    left: 34%;
+    top: 18%;
+    
+
+.input-container
+  position: absolute;
+  height: 100px;
+  top: 80%;
+
+.input-box
+  font-size: 16px;
+  height: 115px;
+  display: inline-block;
+  border: #444444 solid 1px;
+  border-radius: 20px;
+  background-color: $dark-gray;
+
+  span
+    display: block;
+    padding: 10px;
+    color: #e0e0e0;
+    width: 150px;
+    text-align: center;
+
+  button
+    display: block;
+    padding: 1px;
+    background-color: #4fb3bf;
+    border: none;
+    height: 30px;
+    width: 150px;
+    border-radius: 10px;
+
+  input
+    padding: 10px;
+    height: 40px; 
+    width: 150px;
+    background-color: $dark-gray; 
+    border: $white 1px solid;
+    border-radius: 10px;
+    color: $light-yellow;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 16px;
+
+.bolt
+  position: absolute;
+  top: 140px;
+  right: 50px;
+  width: 60px;
+  font-size: 60px
+  color: $light-yellow;
+
+  /*# sourceMappingURL=style.css.map */

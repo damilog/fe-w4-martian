@@ -3,50 +3,70 @@
   <head>
     <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <script src="https://kit.fontawesome.com/fb7e7bab0c.js" crossorigin="anonymous"></script>
- 
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/fb7e7bab0c.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <main>
-      <div class="circle">
+      <section class="circle">
         <div class="line-container">
           <div class="line" id="l-01">
-            <span id="line__text-l">C</span>
-            <span id="line__text-r">5</span>
+            <span class="line-span" id="line__text-l">C</span>
+            <span class="line-span" id="line__text-r">5</span>
           </div>
           <div class="line" id="l-02">
-            <span id="line__text-l">D</span>
-            <span id="line__text-r">6</span>
+            <span class="line-span" id="line__text-l">D</span>
+            <span class="line-span" id="line__text-r">6</span>
           </div>
           <div class="line" id="l-03">
-            <span id="line__text-l">E</span>
-            <span id="line__text-r">7</span>
+            <span class="line-span" id="line__text-l">E</span>
+            <span class="line-span" id="line__text-r">7</span>
           </div>
           <div class="line" id="l-04">
-            <span id="line__text-l">F</span>
-            <span id="line__text-r">8</span>
+            <span class="line-span" id="line__text-l">F</span>
+            <span class="line-span" id="line__text-r">8</span>
           </div>
           <div class="line" id="l-05">
-            <span id="line__text-l">0</span>
-            <span id="line__text-r">9</span>
+            <span class="line-span" id="line__text-l">0</span>
+            <span class="line-span" id="line__text-r">9</span>
           </div>
           <div class="line" id="l-06">
-            <span id="line__text-l">1</span>
-            <span id="line__text-r">A</span>
+            <span class="line-span" id="line__text-l">1</span>
+            <span class="line-span" id="line__text-r">A</span>
           </div>
           <div class="line" id="l-07">
-            <span id="line__text-l">2</span>
-            <span id="line__text-r">B</span>
+            <span class="line-span" id="line__text-l">2</span>
+            <span class="line-span" id="line__text-r">B</span>
           </div>
           <div class="line" id="l-08">
-            <span id="line__text-l">3</span>
+            <span class="line-span" id="line__text-l">3</span>
           </div>
-          <span id="line__text-r-out">4</span>
-        </div>      
-        
-        <div class="arrow"><i class="fas fa-long-arrow-alt-up"></i></div> 
-      </div>
+          <span class="line-span" id="line__text-r-out">4</span>
+        </div>
+        <div class="arrow"><i class="fas fa-long-arrow-alt-up"></i></div>
       </section>
+
+      <section class="input-container">
+        <div class="input-box">
+          <span>송수신정보</span>
+          <input type="text" />
+          <button>해석하기</button>
+        </div>
+        <div class="input-box">
+          <span>발신정보입력</span>
+          <input type="text" placeholder="> HELLO EARTH!" />
+          <button>지구로보내기</button>
+        </div>
+      </section>
+
+      <div class="bolt"><i class="fas fa-bolt"></i></div>
     </main>
     <script type="module" src="/javascripts/main.js"></script>
   </body>

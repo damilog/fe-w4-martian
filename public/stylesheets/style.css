@@ -4,18 +4,27 @@
   box-sizing: border-box; }
 
 body {
-  padding: 10px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  padding: 30px; }
 
 a {
   color: #00b7ff; }
+
+main {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  padding: 50px;
+  background-image: url("https://foreignpolicy.com/wp-content/uploads/2019/07/1_Earthrise-space-climate-NASA-Autry-climate-GettyImages-90763854_SW_V1.jpg");
+  background-repeat: no-repeat;
+  background-size: 1200px; }
 
 .circle {
   position: relative;
   width: 500px;
   height: 500px;
-  background-color: rgba(88, 105, 253, 0.89);
-  border-radius: 50%; }
+  color: #fff;
+  border-radius: 50%;
+  font-family: 'DotGothic16', sans-serif; }
 
 .line-container {
   outline: black solid;
@@ -30,48 +39,35 @@ a {
   width: 500px;
   transform: translateY(100px); }
 
+.line-span {
+  top: 25px;
+  position: absolute;
+  font-size: 30px; }
+
+#line__text-l {
+  left: 20px; }
+
+#line__text-r {
+  right: 20px; }
+
 #l-01 {
   transform: rotate(22.5deg); }
   #l-01 span {
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-22.5deg); }
-  #l-01 #line__text-l {
-    left: 20px; }
-  #l-01 #line__text-r {
-    right: 20px; }
 
 #l-02 {
   transform: rotate(45deg); }
   #l-02 span {
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-45deg); }
-  #l-02 #line__text-l {
-    left: 20px; }
-  #l-02 #line__text-r {
-    right: 20px; }
 
 #l-03 {
   transform: rotate(67.5deg); }
   #l-03 span {
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-67.5deg); }
-  #l-03 #line__text-l {
-    left: 20px; }
-  #l-03 #line__text-r {
-    right: 20px; }
 
 #l-04 {
   transform: rotate(90deg); }
   #l-04 span {
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-90deg); }
   #l-04 #line__text-l {
     left: 20px; }
@@ -81,48 +77,22 @@ a {
 #l-05 {
   transform: rotate(112.5deg); }
   #l-05 span {
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-112.5deg); }
-  #l-05 #line__text-l {
-    left: 20px; }
-  #l-05 #line__text-r {
-    right: 20px; }
 
 #l-06 {
   transform: rotate(135deg); }
   #l-06 span {
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-135deg); }
-  #l-06 #line__text-l {
-    left: 20px; }
-  #l-06 #line__text-r {
-    right: 20px; }
 
 #l-07 {
   transform: rotate(157.5deg); }
   #l-07 span {
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-157.5deg); }
-  #l-07 #line__text-l {
-    left: 20px; }
-  #l-07 #line__text-r {
-    right: 20px; }
 
 #l-08 {
   transform: rotate(180deg); }
   #l-08 span {
-    top: 25px;
-    position: absolute;
-    font-size: 30px;
     transform: rotate(-180deg); }
-  #l-08 #line__text-l {
-    left: 20px; }
 
 #line__text-r-out {
   position: absolute;
@@ -134,17 +104,62 @@ a {
   font-size: 60px;
   top: 40%;
   left: 40%;
-  padding: 20px;
   position: absolute;
   width: 100px;
   height: 100px;
-  background-color: white;
-  border: gray solid 1px;
-  border-radius: 50%; }
+  background-color: #00838f;
+  border: #005662 solid 3px;
+  border-radius: 50%;
+  transform: rotate(-119deg); }
   .arrow i {
     position: absolute;
-    left: 34px; }
+    left: 34%;
+    top: 18%; }
 
-/*# sourceMappingURL=style.css.map */
+.input-container {
+  position: absolute;
+  height: 100px;
+  top: 80%; }
+
+.input-box {
+  font-size: 16px;
+  height: 115px;
+  display: inline-block;
+  border: #444444 solid 1px;
+  border-radius: 20px;
+  background-color: #212121; }
+  .input-box span {
+    display: block;
+    padding: 10px;
+    color: #e0e0e0;
+    width: 150px;
+    text-align: center; }
+  .input-box button {
+    display: block;
+    padding: 1px;
+    background-color: #4fb3bf;
+    border: none;
+    height: 30px;
+    width: 150px;
+    border-radius: 10px; }
+  .input-box input {
+    padding: 10px;
+    height: 40px;
+    width: 150px;
+    background-color: #212121;
+    border: #fff 1px solid;
+    border-radius: 10px;
+    color: #eeff41;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 16px; }
+
+.bolt {
+  position: absolute;
+  top: 140px;
+  right: 50px;
+  width: 60px;
+  font-size: 60px;
+  color: #eeff41;
+  /*# sourceMappingURL=style.css.map */ }
 
 /*# sourceMappingURL=style.css.map */
