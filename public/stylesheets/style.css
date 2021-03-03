@@ -5,6 +5,7 @@
 }
 
 body {
+<<<<<<< HEAD
   padding: 30px;
 }
 
@@ -30,6 +31,21 @@ main {
   background-repeat: no-repeat;
   background-size: 1200px;
 }
+=======
+  padding: 30px; }
+
+a {
+  color: #00b7ff; }
+>>>>>>> 68dd130 (feat : UI Sass 디자인 추가)
+
+main {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  padding: 50px;
+  background-image: url("https://foreignpolicy.com/wp-content/uploads/2019/07/1_Earthrise-space-climate-NASA-Autry-climate-GettyImages-90763854_SW_V1.jpg");
+  background-repeat: no-repeat;
+  background-size: 1200px; }
 
 .circle {
   position: relative;
@@ -37,8 +53,12 @@ main {
   height: 500px;
   color: #fff;
   border-radius: 50%;
+<<<<<<< HEAD
   font-family: "DotGothic16", sans-serif;
 }
+=======
+  font-family: 'DotGothic16', sans-serif; }
+>>>>>>> 68dd130 (feat : UI Sass 디자인 추가)
 
 .line-container {
   width: 500px;
@@ -68,7 +88,19 @@ main {
   right: 20px;
 }
 
+.line-span {
+  top: 25px;
+  position: absolute;
+  font-size: 30px; }
+
+#line__text-l {
+  left: 20px; }
+
+#line__text-r {
+  right: 20px; }
+
 #l-01 {
+<<<<<<< HEAD
   transform: rotate(22.5deg);
 }
 #l-01 span {
@@ -131,6 +163,52 @@ main {
 }
 
 .line__text-r-out {
+=======
+  transform: rotate(22.5deg); }
+  #l-01 span {
+    transform: rotate(-22.5deg); }
+
+#l-02 {
+  transform: rotate(45deg); }
+  #l-02 span {
+    transform: rotate(-45deg); }
+
+#l-03 {
+  transform: rotate(67.5deg); }
+  #l-03 span {
+    transform: rotate(-67.5deg); }
+
+#l-04 {
+  transform: rotate(90deg); }
+  #l-04 span {
+    transform: rotate(-90deg); }
+  #l-04 #line__text-l {
+    left: 20px; }
+  #l-04 #line__text-r {
+    right: 20px; }
+
+#l-05 {
+  transform: rotate(112.5deg); }
+  #l-05 span {
+    transform: rotate(-112.5deg); }
+
+#l-06 {
+  transform: rotate(135deg); }
+  #l-06 span {
+    transform: rotate(-135deg); }
+
+#l-07 {
+  transform: rotate(157.5deg); }
+  #l-07 span {
+    transform: rotate(-157.5deg); }
+
+#l-08 {
+  transform: rotate(180deg); }
+  #l-08 span {
+    transform: rotate(-180deg); }
+
+#line__text-r-out {
+>>>>>>> 68dd130 (feat : UI Sass 디자인 추가)
   position: absolute;
   top: 55%;
   right: 20px;
@@ -147,18 +225,30 @@ main {
   background-color: #00838f;
   border: #005662 solid 3px;
   border-radius: 50%;
+<<<<<<< HEAD
 }
 .arrow i {
   position: absolute;
   left: 34%;
   top: 18%;
 }
+=======
+  transform: rotate(-119deg); }
+  .arrow i {
+    position: absolute;
+    left: 34%;
+    top: 18%; }
+>>>>>>> 68dd130 (feat : UI Sass 디자인 추가)
 
 .input-container {
   position: absolute;
   height: 100px;
+<<<<<<< HEAD
   top: 80%;
 }
+=======
+  top: 80%; }
+>>>>>>> 68dd130 (feat : UI Sass 디자인 추가)
 
 .input-box {
   font-size: 16px;
@@ -166,6 +256,7 @@ main {
   display: inline-block;
   border: #444444 solid 1px;
   border-radius: 20px;
+<<<<<<< HEAD
   background-color: #212121;
 }
 .input-box span {
@@ -195,6 +286,33 @@ main {
   font-family: "DotGothic16", sans-serif;
   font-size: 16px;
 }
+=======
+  background-color: #212121; }
+  .input-box span {
+    display: block;
+    padding: 10px;
+    color: #e0e0e0;
+    width: 150px;
+    text-align: center; }
+  .input-box button {
+    display: block;
+    padding: 1px;
+    background-color: #4fb3bf;
+    border: none;
+    height: 30px;
+    width: 150px;
+    border-radius: 10px; }
+  .input-box input {
+    padding: 10px;
+    height: 40px;
+    width: 150px;
+    background-color: #212121;
+    border: #fff 1px solid;
+    border-radius: 10px;
+    color: #eeff41;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 16px; }
+>>>>>>> 68dd130 (feat : UI Sass 디자인 추가)
 
 .bolt {
   position: absolute;
@@ -203,7 +321,11 @@ main {
   width: 60px;
   font-size: 60px;
   color: #eeff41;
+<<<<<<< HEAD
   /*# sourceMappingURL=style.css.map */
 }
+=======
+  /*# sourceMappingURL=style.css.map */ }
+>>>>>>> 68dd130 (feat : UI Sass 디자인 추가)
 
 /*# sourceMappingURL=style.css.map */
