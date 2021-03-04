@@ -1,4 +1,4 @@
 import MyPromise from "./MyPromise.js";
-import { sendSignal } from "./receiveSignal.js";
+import { sendSignal, convertCharToHex } from "./receiveSignal.js";
 
-sendSignal("daisy");
+sendSignal(convertCharToHex("daisy"));
