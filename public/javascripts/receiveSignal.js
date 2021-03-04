@@ -1,7 +1,7 @@
 import _ from "./util.js";
 const $arrow = _.$(".arrow");
 const $inputReceive = _.$(".input-receive");
-const $btnInterpret = _.$(".btn-interpret");
+const $btnConvert = _.$(".btn-interpret");
 const hexLocations = {
   Total: 360,
   0: 10, // -350 -(total - 0)
@@ -27,12 +27,6 @@ const resetReceive = () => {
   clearInterval(sender);
   $arrow.style.transform = "";
 };
-const convertCharToHex = word => {
-  const currentWord = [...word];
-  return currentWord
-    .map(x => x.charCodeAt(0).toString(16)) //10진수 -> 16진수
-    .map(x => [...x]);
-};
 
 const sendSignal = hexList => {
   //words를 5초마다 receive에 보낸다.
@@ -42,7 +36,7 @@ const sendSignal = hexList => {
   const sender = setInterval(() => {
     if (idx === hexadecimals.length) {
       clearInterval(sender);
-      $btnInterpret.disabled = false;
+      $btnConvert.disabled = false;
       console.log("전송 완료");
     } else {
       console.log(hexadecimals[idx]);
@@ -52,18 +46,27 @@ const sendSignal = hexList => {
   }, 3000);
 };
 
-const showInterpretedHexStr = str => {
-  const $inputInterpret = _.$("#input-interpret");
-  $inputInterpret.value = str;
+const convertCharToHex = word => {
+  //"star" =>[["7", "3"], ["7", "4"], ["6", "1"], ["7", "2"]]
+  const currentWord = [...word];
+  return currentWord
+    .map(x => x.charCodeAt(0).toString(16)) //10진수 -> 16진수
+    .map(x => [...x]);
 };
 
-const interpretHexStr = str => {
+const convertHexToChar = str => {
+  //"73 74 61 72" => "star"
   const hexStr = str
     .split(" ")
     .filter(x => x)
     .map(x => parseInt(x, 16));
   const char = String.fromCharCode(...hexStr);
   return char;
+};
+
+const showConvertedHexStr = str => {
+  const $inputInterpret = _.$(".input-receive-convert");
+  $inputInterpret.value = str;
 };
 
 const receiveHexSignal = data => {
@@ -104,21 +107,12 @@ const rotateArrow = (hex, finished) => {
   if (!finished) $arrow.style.transform = `rotate(${hexLocations[hex]}deg)`;
 };
 
-const calculateDistance = hex => {
-  //가까운 쪽으로 움직이는거 ..
-  const currentArrowRotation = $arrow.style.transform
-    .replace("rotate(", "")
-    .replace("deg)", "");
-  //알아서 가까운 쪽으로 움직이는거 같은데..?
-};
-
 const showReceivedHexStr = (str, finished) => {
   finished ? ($inputReceive.value += " ") : ($inputReceive.value += str);
 };
 
 const colorReceivedHexStr = (key, finished) => {
   if (finished) return;
-
   const $currentHex = _.$(`#text-${key}`);
 
   if (!_.$(".blink")) {
@@ -131,10 +125,11 @@ const colorReceivedHexStr = (key, finished) => {
 };
 
 const onEvent = () => {
-  $btnInterpret.addEventListener(
-    "click",
-    () => showInterpretedHexStr(interpretHexStr($inputReceive.value)) //정답 보여주기
+  $btnConvert.addEventListener("click", () =>
+    showConvertedHexStr(convertHexToChar($inputReceive.value))
   );
 };
+
 onEvent();
+
 export { sendSignal, convertCharToHex };
