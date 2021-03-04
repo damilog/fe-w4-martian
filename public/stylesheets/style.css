@@ -240,6 +240,7 @@ main {
   background-color: #00838f;
   border: #005662 solid 3px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   border-radius: 50%;
 <<<<<<< HEAD
 }
@@ -253,6 +254,11 @@ main {
 =======
   border-radius: 50%; }
 >>>>>>> 5cf83c4 (feat : util함수, 2초 후 문자 가리키며 깜빡이는 기능, 송수신 정보 input에 문자 보여주는 기능에 대한 스켈레톤 코드 추가)
+=======
+  border-radius: 50%;
+  transition: 0.5s;
+  transform: rotate(10deg); }
+>>>>>>> c3e61f6 (ffix: 해석하기 버튼 이벤트가 미리 실행되는 오류 수정)
   .arrow i {
     position: absolute;
     left: 34%;
