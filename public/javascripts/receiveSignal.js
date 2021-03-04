@@ -95,7 +95,6 @@ const showReceivedHexStr = str => {
 };
 
 const colorReceivedHexStr = key => {
-  //현재 hex값에 해당하는 elem을 깜빡거리게 함
   console.log(key);
   const $currentHex = _.$(`#text-${key}`);
   $currentHex.classList.add("blink");
