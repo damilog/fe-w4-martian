@@ -4,7 +4,7 @@ const $inputReceive = _.$(".input-receive");
 const $btnConvert = _.$(".btn-interpret");
 const hexLocations = {
   Total: 360,
-  0: 10, // -350 -(total - 0)
+  0: 10,
   1: 30,
   2: 60,
   3: 80,
@@ -23,9 +23,15 @@ const hexLocations = {
 };
 
 //const go = (...args) => reduce((acc, fun) => fun(acc), args);
-const resetReceive = () => {
+const resetReceiver = () => {
   clearInterval(sender);
-  $arrow.style.transform = "";
+  $btnConvert.disabled = true; // 버튼 비활성화
+  console.log("전송 중지");
+  const $blinkingHex = _.$(".blink");
+  $blinkingHex.classList.remove("blink"); //깜빡임 리셋
+  $arrow.style.transform = ""; //화살표 리셋
+  $inputReceive.value = ""; //input 리셋
+  $inputInterpret.value = ""; //input 결과 리셋
 };
 
 const sendSignal = hexList => {
@@ -48,20 +54,19 @@ const sendSignal = hexList => {
 
 const convertCharToHex = word => {
   //"star" =>[["7", "3"], ["7", "4"], ["6", "1"], ["7", "2"]]
-  const currentWord = [...word];
-  return currentWord
+  return [...word]
     .map(x => x.charCodeAt(0).toString(16)) //10진수 -> 16진수
     .map(x => [...x]);
 };
 
 const convertHexToChar = str => {
   //"73 74 61 72" => "star"
-  const hexStr = str
-    .split(" ")
-    .filter(x => x)
-    .map(x => parseInt(x, 16));
-  const char = String.fromCharCode(...hexStr);
-  return char;
+  return String.fromCharCode(
+    ...str
+      .split(" ")
+      .filter(x => x)
+      .map(x => parseInt(x, 16))
+  );
 };
 
 const showConvertedHexStr = str => {
@@ -132,4 +137,4 @@ const onEvent = () => {
 
 onEvent();
 
-export { sendSignal, convertCharToHex };
+export { sendSignal, convertCharToHex, resetReceiver };
