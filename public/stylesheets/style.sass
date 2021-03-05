@@ -63,61 +63,12 @@ main
 .line__text-r 
   right: 20px;
 
-
-#l-01 
-  transform: rotate($deg);
+@for $i from 1 through 8
+  #l-0#{$i} 
+   transform: rotate($deg * $i);
   
-  span
-    transform: rotate(-$deg);
-
-
-#l-02 
-  transform: rotate($deg * 2);
-
-  span
-    transform: rotate(-$deg*2);
-
-
-#l-03  
-  transform: rotate($deg * 3);
-
-  span
-    transform: rotate(-$deg*3);
-
-
-#l-04 
-  transform: rotate($deg * 4);
-  
-  span
-    transform: rotate(-$deg*4);
-
-#l-05 
-  transform: rotate($deg * 5);
-
-  span
-    transform: rotate(-$deg*5);
-
-
-#l-06 
-  transform: rotate($deg * 6);
-
-  span
-    transform: rotate(-$deg*6);
-
-
-#l-07 
-  transform: rotate($deg * 7);
-
-  span
-    transform: rotate(-$deg*7);
-
-
-#l-08 
-  transform: rotate($deg * 8);
-
-  span
-    transform: rotate(-$deg * 8);
-
+   span
+     transform: rotate(-$deg*  $i);
 
 .line__text-r-out
   position: absolute;
