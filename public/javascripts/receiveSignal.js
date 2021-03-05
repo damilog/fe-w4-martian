@@ -2,6 +2,7 @@ import _ from "./util.js";
 const $arrow = _.$(".arrow");
 const $inputReceive = _.$(".input-receive");
 const $btnConvert = _.$(".btn-interpret");
+const $inputInterpret = _.$(".input-receive-convert");
 const hexLocations = {
   Total: 360,
   0: 10,
@@ -24,26 +25,28 @@ const hexLocations = {
 
 //const go = (...args) => reduce((acc, fun) => fun(acc), args);
 const resetReceiver = () => {
-  clearInterval(sender);
   $btnConvert.disabled = true; // 버튼 비활성화
-  console.log("전송 중지");
-  const $blinkingHex = _.$(".blink");
-  $blinkingHex.classList.remove("blink"); //깜빡임 리셋
-  $arrow.style.transform = ""; //화살표 리셋
   $inputReceive.value = ""; //input 리셋
   $inputInterpret.value = ""; //input 결과 리셋
+};
+
+const endReceive = () => {
+  $btnConvert.disabled = false;
+  _.$(".blink").classList.remove("blink");
+  $arrow.style.transform = "";
+  console.log("전송 완료");
 };
 
 const sendSignal = hexList => {
   //words를 5초마다 receive에 보낸다.
   const hexadecimals = hexList;
+  console.log(hexList);
   let idx = 0;
 
   const sender = setInterval(() => {
     if (idx === hexadecimals.length) {
       clearInterval(sender);
-      $btnConvert.disabled = false;
-      console.log("전송 완료");
+      endReceive();
     } else {
       console.log(hexadecimals[idx]);
       receiveHexSignal(hexadecimals[idx]); //["6","4"]형태로 전달
@@ -70,7 +73,6 @@ const convertHexToChar = str => {
 };
 
 const showConvertedHexStr = str => {
-  const $inputInterpret = _.$(".input-receive-convert");
   $inputInterpret.value = str;
 };
 
@@ -84,7 +86,7 @@ const receiveHexSignal = data => {
 
   transmitter
     .then(hex => {
-      console.log(hex[0], "0번 rotate에 보냄");
+      console.log(hex[0], "16진수 첫 번째 문자 전달 완료");
       activateReceiver(hex[0]);
       return hex;
     })
@@ -94,7 +96,7 @@ const receiveHexSignal = data => {
       });
     })
     .then(hex => {
-      console.log(hex[1], "1번 rotate에 보냄");
+      console.log(hex[1], "16진수 두 번째 문자 전달 완료");
       activateReceiver(hex[1]);
     })
     .finally(hex => {

@@ -1,7 +1,10 @@
 import _ from "./util.js";
-import { resetReceiver } from "./receiveSignal.js";
-//지구로 보내기 누를 때 왼쪽 화면 리셋
-// 리셋 후 convert데이터로 send 재실행
+import {
+  sendSignal,
+  convertCharToHex,
+  resetReceiver,
+} from "./receiveSignal.js";
+
 const $inputSend = _.$(".input-send");
 const $inputSendConvert = _.$(".input-send-convert");
 const $btnSend = _.$(".btn-send");
@@ -13,17 +16,20 @@ const convertOneCharToHex = char => {
     .join(" ");
 };
 
-const showConvertedResult = evt => {
+const showConvertedResult = () => {
   const currentInput = $inputSend.value;
   const convertedInput = convertOneCharToHex(currentInput);
   $inputSendConvert.value = convertedInput;
 };
-const reset = () => {
+
+const sendToEarth = () => {
   resetReceiver();
+  sendSignal(convertCharToHex($inputSend.value));
 };
+
 const onSendEvent = () => {
   $inputSend.addEventListener("input", showConvertedResult);
-  $btnSend.addEventListener("click", () => reset());
+  $btnSend.addEventListener("click", sendToEarth);
 };
 
 onSendEvent();
