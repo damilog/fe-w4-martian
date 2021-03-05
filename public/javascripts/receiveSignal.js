@@ -4,7 +4,7 @@ const $inputReceive = _.$(".input-receive");
 const $btnConvert = _.$(".btn-interpret");
 const $inputInterpret = _.$(".input-receive-convert");
 const hexLocations = {
-  //  Daisy: 회전 각도 이렇게 값으로 넣지 않으려 했는데 원판을 잘못 만들었는지 30,150,240,330도 다음에 있는 문자로 이동할 때 마다
+  //  회전 각도 이렇게 값으로 넣지 않으려 했는데 원판을 잘못 만들었는지 30,150,240,330도 다음에 있는 문자로 이동할 때 마다
   // 20도가 아닌 30도를 더해줘야 화살표가 영역 중앙에 위치해서 이렇게 객체에 넣게 되었습니다..ㅠㅠ
   Total: 360,
   0: 10,
@@ -54,7 +54,7 @@ const sendSignal = hexList => {
       receiveHexSignal(hexadecimals[idx]); //["6","4"]형태로 전달
       idx++;
     }
-  }, 3000);
+  }, 5000);
 };
 
 const convertCharToHex = word => {
@@ -82,7 +82,7 @@ const receiveHexSignal = data => {
   const hexadecimals = data;
 
   const transmitter = new Promise((resolve, reject) => {
-    setTimeout(() => resolve(hexadecimals), 1000);
+    setTimeout(() => resolve(hexadecimals), 2000);
   });
 
   transmitter
@@ -93,7 +93,7 @@ const receiveHexSignal = data => {
     })
     .then(hex => {
       return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(hex), 1000);
+        setTimeout(() => resolve(hex), 2000);
       });
     })
     .then(hex => {
