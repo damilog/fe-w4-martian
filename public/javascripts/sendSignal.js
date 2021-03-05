@@ -17,12 +17,14 @@ const convertOneCharToHex = char => {
 };
 
 const showConvertedResult = () => {
+  $btnSend.disabled = false;
   const currentInput = $inputSend.value;
   const convertedInput = convertOneCharToHex(currentInput);
   $inputSendConvert.value = convertedInput;
 };
 
 const sendToEarth = () => {
+  $btnSend.disabled = true;
   resetReceiver();
   sendSignal(convertCharToHex($inputSend.value));
 };

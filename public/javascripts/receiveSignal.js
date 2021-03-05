@@ -4,6 +4,8 @@ const $inputReceive = _.$(".input-receive");
 const $btnConvert = _.$(".btn-interpret");
 const $inputInterpret = _.$(".input-receive-convert");
 const hexLocations = {
+  //  Daisy: 회전 각도 이렇게 값으로 넣지 않으려 했는데 원판을 잘못 만들었는지 30,150,240,330도 다음에 있는 문자로 이동할 때 마다
+  // 20도가 아닌 30도를 더해줘야 화살표가 영역 중앙에 위치해서 이렇게 객체에 넣게 되었습니다..ㅠㅠ
   Total: 360,
   0: 10,
   1: 30,
@@ -48,7 +50,7 @@ const sendSignal = hexList => {
       clearInterval(sender);
       endReceive();
     } else {
-      console.log(hexadecimals[idx]);
+      console.log(hexadecimals[idx], "전달 시작");
       receiveHexSignal(hexadecimals[idx]); //["6","4"]형태로 전달
       idx++;
     }
@@ -56,14 +58,14 @@ const sendSignal = hexList => {
 };
 
 const convertCharToHex = word => {
-  //"star" =>[["7", "3"], ["7", "4"], ["6", "1"], ["7", "2"]]
+  //"star" =>[["7", "3"], ["7", "4"], ["6", "1"], ["7", "2"]] 이런 형식으로 반환합니다.
   return [...word]
     .map(x => x.charCodeAt(0).toString(16)) //10진수 -> 16진수
     .map(x => [...x]);
 };
 
 const convertHexToChar = str => {
-  //"73 74 61 72" => "star"
+  //"73 74 61 72" => "star" 이런 형식으로 반환합니다.
   return String.fromCharCode(
     ...str
       .split(" ")
@@ -77,8 +79,7 @@ const showConvertedHexStr = str => {
 };
 
 const receiveHexSignal = data => {
-  const hexadecimals = data; //["6","4"]형태로 전달받음
-  console.log(hexadecimals, "받음");
+  const hexadecimals = data;
 
   const transmitter = new Promise((resolve, reject) => {
     setTimeout(() => resolve(hexadecimals), 1000);
@@ -105,8 +106,8 @@ const receiveHexSignal = data => {
 };
 
 const activateReceiver = (hex, finished = false) => {
-  rotateArrow(hex, finished); //화살표를 회전시키는 함수 hex값에 해당하는 deg만큼 화살표를 회전시킴
-  showReceivedHexStr(hex, finished); //input에 현재 hex값을 보여줌
+  rotateArrow(hex, finished);
+  showReceivedHexStr(hex, finished);
   colorReceivedHexStr(hex, finished);
 };
 
@@ -131,12 +132,12 @@ const colorReceivedHexStr = (key, finished) => {
   }
 };
 
-const onEvent = () => {
+const onConvertEvent = () => {
   $btnConvert.addEventListener("click", () =>
     showConvertedHexStr(convertHexToChar($inputReceive.value))
   );
 };
 
-onEvent();
+onConvertEvent();
 
 export { sendSignal, convertCharToHex, resetReceiver };
