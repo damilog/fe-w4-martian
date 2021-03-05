@@ -74,10 +74,6 @@ main {
   transform: rotate(90deg); }
   #l-04 span {
     transform: rotate(-90deg); }
-  #l-04 #line__text-l {
-    left: 20px; }
-  #l-04 #line__text-r {
-    right: 20px; }
 
 #l-05 {
   transform: rotate(112.5deg); }
